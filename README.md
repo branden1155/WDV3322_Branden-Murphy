@@ -10,3 +10,8 @@
 ### Assignment: Unit Test API
 ### Date: 10/9/2022
 ### Description: setting up POST / Signup and POST / Login, and did testing for each
+
+## Week 3:
+### Assignment: JWT Integration
+### Date: 10/16/2022
+### Description: Set up JWT for the API Application, and tested for it using Postman
