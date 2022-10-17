@@ -4,7 +4,7 @@ const User = require('../api/model/user');
 
 jest.mock("./db")
 
-beforeEach(async () => {
+beforeAll(async () => {
     await connection();
 })
 describe("DataBase Functions",() => {
@@ -19,19 +19,20 @@ describe("DataBase Functions",() => {
         expect(newUser.firstName).toEqual('branden');
         expect(newUser.email).toEqual('branden@gmail.com');
         expect(newUser.password).toEqual('branden');
-    })
+    });
 
     test("Find a User", async () => {
-        const find = findUser({ email: "branden@gmail.com"})
-        console.log(find)
-        //expect(find.email).toEqual("branden@gmail.com");
-        //zexpect(find.password).toEqual("branden");
-    })
-})
+        findUser({email: "branden@gmail.com"}).then(res =>{
+            expect(res.email).toEqual("branden@gmail.com");
+            expect(res.firstName).toEqual("branden");
+            expect(res.password).toEqual("branden");
+        });
+    });
+});
 
-afterEach(async () => {
+afterAll(async () => {
     await disconnect();
-})
+});
 
 
 

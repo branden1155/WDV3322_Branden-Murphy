@@ -13,7 +13,7 @@ const saveUser = async () => {
 
 const findUser = async () => {
     console.log("Mocked find User")
-    return Promise.resolve({
+    return await Promise.resolve({
         email: "branden@gmail.com",
         firstName: 'branden',
         password: 'branden',
