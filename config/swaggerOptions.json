@@ -1,0 +1,154 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Signup API Docs",
+        "version": "1.0.0",
+        "contact": {
+            "name": "Branden Murphy",
+            "email": "bpmurphy@student.fullsail.edu",
+            "url": "www.google.com"
+        }
+    },
+    "servers": [{
+        "url": "http://localhost:3001/users",
+        "description": "Local Server"
+    }],
+    "components": {"securitySchemes": {"bearerAuth": {"type": "http", "scheme": "bearer", "bearerFormat": "JWT"}}},
+    "security": [{
+        "bearerAuth":[]
+    }],
+    "paths": {
+        "/signup":{
+            "post":{
+                "tags": ["Signup"],
+                "summary": "Signup Page",
+                "description": "Signup Using New Information",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string",
+                                        "default": "Branden"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "default": "Murphy"
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "default": "234 Random School Rd"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "default": "Miami"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "default": "FL"
+                                    },
+                                    "zip": {
+                                        "type": "number",
+                                        "default": 12345
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "default": "Branden@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "default": "Branden2022"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, "responses": {
+                    "200": {
+                        "description": "Success! - 200"
+                    },
+                    "201": {
+                        "description": "Success! - 201"
+                    },
+                    "404": {
+                        "description": "Not Found!"
+                    },
+                    "500": {
+                        "description": "Unable to Signup! - 500"
+                    },
+                    "501": {
+                        "description": "Unable to Signup! - 501"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post":{
+                "tags": ["Login"],
+                "summary": "Login Page",
+                "description": "Login using Email, and Password",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "default": "Branden@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "default": "Branden2022"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }, "responses": {
+                    "200": {
+                        "description": "Success! - 200"
+                    },
+                    "201": {
+                        "description": "Success! - 201"
+                    },
+                    "404": {
+                        "description": "Not Found!"
+                    },
+                    "500": {
+                        "description": "Unable to Signup! - 500"
+                    },
+                    "501": {
+                        "description": "Unable to Signup! - 501"   
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get":{
+                "tags": ["Profile"],
+                "summary": "Profile Page",
+                "description": "Display Profile Page, of account that was Logged into",
+                "responses": {
+                    "200": {
+                        "description": "Success! - 200"
+                    },
+                    "201": {
+                        "description": "Success! - 201"
+                    },
+                    "404": {
+                        "description": "Not Found!"
+                    },
+                    "500": {
+                        "description": "Unable to Signup! - 500"
+                    },
+                    "501": {
+                        "description": "Unable to Signup! - 501"   
+                    }
+                }
+            }
+        }
+    }
+}

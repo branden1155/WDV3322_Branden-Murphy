@@ -52,7 +52,7 @@ routes.post('/login', (req, res, next)=>{
         if(!result[0]){
             res.status(500).json({ message: "You have Failed the Authentication, e-Mail does not Exsist!"})
         }
-        if(result) {
+        if(result[0]) {
             bcrypt.compare(req.body.password, result[0].password, (err, output)=>{
                 if(err){
                     return res.status(501).json({ message: err.message });

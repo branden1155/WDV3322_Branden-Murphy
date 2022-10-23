@@ -3,6 +3,8 @@ const mongoose  = require('mongoose');
 const app = express();
 const routes = require("../api/routes/routes")
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocs = require("../config/swaggerOptions.json")
 require("dotenv").config();
 
 //Middleware
@@ -18,6 +20,11 @@ app.get("/", (req,res)=>{
 
 //Calling Routes for API
 app.use('/users', routes)
+
+// use middleware for Swagger UI
+console.log(swaggerDocs);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 
 //Middleware for handling Errors
 app.use((req,res,next)=>{
