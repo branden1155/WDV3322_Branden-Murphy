@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     state: {
         type: String,
     },
-    zipcode: {
+    zip: {
         type: Number,
     },
     email: {

@@ -29,7 +29,7 @@ routes.post('/signup', (req,res, next)=>{
                     address: req.body.address,
                     city: req.body.city,
                     state: req.body.state,
-                    zipcode: req.body.zicode,
+                    zip: req.body.zip,
                     email: req.body.email,
                     password: hash,
                 });
@@ -65,7 +65,7 @@ routes.post('/login', (req, res, next)=>{
                         address: result[0].address,
                         city: result[0].city,
                         state: result[0].state,
-                        zipcode: result[0].zipcode,
+                        zip: result[0].zip,
                         password: result[0].password},
                         process.env.jwt_key); 
                     res.status(201).json({
