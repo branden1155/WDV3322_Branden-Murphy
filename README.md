@@ -15,3 +15,9 @@
 ### Assignment: JWT Integration
 ### Date: 10/16/2022
 ### Description: Set up JWT for the API Application, and tested for it using Postman
+
+## Week 4:
+### Assignment: Front-End intergration
+### Date: 10/22/2022
+### Description: Applied Back-end API to a Front-end Server, No changes were made to the API this week,
+### except small typos for the Zipcode.
